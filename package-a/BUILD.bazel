@@ -1,0 +1,10 @@
+load("@aspect_rules_swc//swc:swc.bzl", "swc_transpiler")
+
+swc_transpiler(
+    name = 'package-a',
+    srcs = ['index.ts'],
+    data = [
+        "//package-b",
+    ],
+    visibility = ["//visibility:public"],
+)
